@@ -4,7 +4,7 @@ pipeline {
         stage('github') {
             steps { 
                 echo 'code check-in'
-                sh git credentialsId: 'github-credentials', url: 'https://github.com/dmayank10/gitPrac'
+                git credentialsId: 'github-credentials', url: 'https://github.com/dmayank10/gitPrac'
             }
         }
         stage('build') {
