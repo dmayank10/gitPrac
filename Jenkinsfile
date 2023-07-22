@@ -9,7 +9,7 @@ pipeline {
         }
         stage('build') {
             tools {
-                maven 'M3'
+                maven 'pip-maven' 
             }
             steps { 
                 echo 'code build through maven'
