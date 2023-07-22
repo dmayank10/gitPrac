@@ -10,7 +10,7 @@ pipeline {
         stage('build') {
             steps { 
                 echo 'code build through maven'
-                build 'pip'
+                sh 'mvn clean package compile install' 
             }
         }
         stage('test') {
