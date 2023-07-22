@@ -9,7 +9,7 @@ pipeline {
         }
         stage('build') {
             tools {
-                maven 'pip-maven' 
+                Maven 'pip-maven' 
             }
             steps { 
                 echo 'code build through maven'
@@ -21,7 +21,7 @@ pipeline {
         }
         stage('test') {
             tools {
-            pip-sonarqube
+            SonarQube Scanner'pip-sonarqube'
             }
             steps { 
                 echo 'code test through sonarqube'
