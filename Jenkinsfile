@@ -8,6 +8,9 @@ pipeline {
             }
         }
         stage('build') {
+            tools {
+                maven 'M3'
+            }
             steps { 
                 echo 'code build through maven'
                 sh 'mvn clean package compile install' 
