@@ -10,6 +10,7 @@ pipeline {
         stage('build') {
             steps { 
                 echo 'code build through maven'
+                build 'pip'
             }
         }
         stage('test') {
