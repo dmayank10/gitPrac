@@ -14,6 +14,7 @@ pipeline {
             steps { 
                 echo 'code build through maven'
                 sh 'mvn clean package' 
+                sh 'mvn clean install' 
             }
         }
         stage('test') {
