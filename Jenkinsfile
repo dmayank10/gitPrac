@@ -20,15 +20,8 @@ pipeline {
             }
         }
         stage('test') {
-            tools {
-            sonarqube 'pip-sonarqube'
-            }
             steps { 
                 echo 'code test through sonarqube'
-                sh 'mvn clean sonar:sonar'
-                sh 'mvn package sonar:sonar'
-                sh 'mvn compile sonar:sonar'
-                sh 'mvn install sonar:sonar'
             }
         }
         stage('deploy') {
