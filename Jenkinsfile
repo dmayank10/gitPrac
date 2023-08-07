@@ -9,7 +9,7 @@ pipeline {
         }
         stage('build') {
             tools {
-                maven 'pip-maven' 
+                maven 'website maven' 
             }
             steps { 
                 echo 'code build through maven'
