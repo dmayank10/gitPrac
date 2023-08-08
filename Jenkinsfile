@@ -15,9 +15,9 @@ pipeline {
                 sh 'mvn package'
                 sh 'mvn compile'
                 sh 'mvn install'
-}
+                }
             }
-                // 'SonarQube-website'
+        }    // 'SonarQube-website'
         stage('test') {
             steps { 
                 withSonarQubeEnv {
