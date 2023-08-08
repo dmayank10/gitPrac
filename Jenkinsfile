@@ -17,10 +17,10 @@ pipeline {
                 sh 'mvn install'
                 }
             }
-        }    // 'SonarQube-website'
+        }    
         stage('test') {
             steps { 
-                withSonarQubeEnv {
+                withSonarQubeEnv('SonarQube-website') {
     echo 'code test through sonarqube'
 }
                 
