@@ -8,17 +8,23 @@ pipeline {
             }
         }
         stage('build') {
-            tools {
-                maven 'website maven' 
-            }
-            steps { 
-                echo 'code build through maven'
+            withMaven(globalMavenSettingsConfig: '', jdk: '', maven: 'maven-website', mavenSettingsConfig: '', traceability: true) {
+    echo 'code build through maven'
                 sh 'mvn clean'
                 sh 'mvn package'
                 sh 'mvn compile'
                 sh 'mvn install'
+}
+                // 'SonarQube-website'
             }
-        }
+            // steps { 
+            //     echo 'code build through maven'
+            //     sh 'mvn clean'
+            //     sh 'mvn package'
+            //     sh 'mvn compile'
+            //     sh 'mvn install'
+            // }
+        // }
         stage('test') {
             steps { 
                 echo 'code test through sonarqube'
