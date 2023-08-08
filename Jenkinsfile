@@ -18,18 +18,12 @@ pipeline {
 }
             }
                 // 'SonarQube-website'
-            }
-            // steps { 
-            //     echo 'code build through maven'
-            //     sh 'mvn clean'
-            //     sh 'mvn package'
-            //     sh 'mvn compile'
-            //     sh 'mvn install'
-            // }
-        // }
         stage('test') {
             steps { 
-                echo 'code test through sonarqube'
+                withSonarQubeEnv {
+    echo 'code test through sonarqube'
+}
+                
             }
         }
         stage('deploy') {
