@@ -20,12 +20,9 @@ pipeline {
         }    
         stage('test') {
             steps { 
-                withSonarQubeEnv('SonarQube-website') {
-    echo 'code test through sonarqube'
-                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=gitPrac \
-                    -Dsonar.java.binaries=. \
-                    -Dsonar.projectKey=gitPrac '''
-}
+                def sonarScannerCmd = "${SCANNER_HOME}/bin/sonar-scanner"
+                    withSonarQubeEnv('SonarQube-website') {
+                        sh "${sonarScannerCmd}"
                 
             }
         }
