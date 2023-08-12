@@ -5,35 +5,23 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>my-maven-project</artifactId>
+    <artifactId>my-sonarqube-project</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <sonar.host.url>http://localhost:9000</sonar.host.url>
+        <sonar.login>sqa_095314b2cc6b7ce583033e6df0cececc112a71af</sonar.login>
     </properties>
 
     <dependencies>
-        <dependency>  
-      <groupId>junit</groupId>  
-      <artifactId>junit</artifactId>  
-      <version>4.8.2</version>  
-      <scope>test</scope>  
-    </dependency>  
+        
     </dependencies>
 
     <build>
         <plugins>
-            <plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-compiler-plugin</artifactId>
-    <version>3.8.1</version> <!-- Use the version compatible with your project -->
-    <configuration>
-        <source>${maven.compiler.source}</source>
-        <target>${maven.compiler.target}</target>
-    </configuration>
-</plugin>
-
+            
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -45,42 +33,10 @@
             </plugin>
             
             <plugin>
-    <groupId>org.sonarsource.scanner.maven</groupId>
-    <artifactId>sonar-maven-plugin</artifactId>
-    <version>3.9.0.2155</version> <!-- Use the latest version -->
-    <executions>
-        <execution>
-            <id>sonarqube</id>
-            <goals>
-                <goal>sonar</goal>
-            </goals>
-        </execution>
-    </executions>
-</plugin>
-
-            <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
-                <version>3.9.0.2155</version> <!-- Use the latest version -->
+                <version>3.9.0.2155</version>
             </plugin>
         </plugins>
     </build>
-
-    <reporting>
-        <plugins>
-            <!-- Surefire Plugin for Test Reports -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.2</version> <!-- Use the version compatible with your project -->
-            </plugin>
-            
-            <!-- Jacoco Plugin for Code Coverage Reports -->
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.7</version> <!-- Use the version compatible with your project -->
-            </plugin>
-        </plugins>
-    </reporting>
 </project>
