@@ -22,8 +22,9 @@ pipeline {
             steps { 
                 withSonarQubeEnv('SonarQube-website') {
     echo 'code test through sonarqube'
-                    sh "${scannerHome}/bin/sonar-scanner -X"
-                     mvn sonar: sonar
+                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=gitPrac \
+                    -Dsonar.java.binaries=. \
+                    -Dsonar.projectKey=gitPrac '''
 }
                 
             }
