@@ -23,7 +23,7 @@ pipeline {
                 def sonarScannerCmd = "${SCANNER_HOME}/bin/sonar-scanner"
                     withSonarQubeEnv('SonarQube-website') {
                         sh "${sonarScannerCmd}"
-                
+                    }
             }
         }
         stage('deploy') {
