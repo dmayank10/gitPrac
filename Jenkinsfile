@@ -22,6 +22,7 @@ pipeline {
             steps { 
                 withSonarQubeEnv('SonarQube-website') {
     echo 'code test through sonarqube'
+                     mvn sonar: sonar
 }
                 
             }
