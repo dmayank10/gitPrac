@@ -11,7 +11,7 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <sonar.host.url>http://192.168.1.3:9000</sonar.host.url>
+        <sonar.host.url>http://192.168.1.4:9000</sonar.host.url>
         <sonar.login>sqa_095314b2cc6b7ce583033e6df0cececc112a71af</sonar.login>
     </properties>
 
@@ -35,8 +35,8 @@
             <!-- SonarQube Plugin -->
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
-                <artifactId>sonar-maven-plugin</artifactId>
-                <version>3.9.0.2155</version> <!-- Use the latest version -->
+                <artifactId>SonarQube</artifactId>
+                <version>5.0.1.3006</version> <!-- Use the latest version -->
             </plugin>
         </plugins>
     </build>
