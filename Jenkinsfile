@@ -12,7 +12,7 @@ pipeline {
         }
         stage('build') {
             steps {
-                withMaven(globalMavenSettingsConfig: '', jdk: '', maven: 'maven-website', mavenSettingsConfig: '', traceability: true) {
+                withMaven(globalMavenSettingsConfig: '', jdk: '', maven: 'Maven', mavenSettingsConfig: '', traceability: true) {
                     echo 'code build through maven'
                     sh 'mvn clean'
                     sh 'mvn package'
@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                     def sonarScannerCmd = "${SCANNER_HOME}/bin/sonar-scanner"
-                    withSonarQubeEnv('SonarQube-website') {
+                    withSonarQubeEnv('SonarQube') {
                         sh "${sonarScannerCmd}"
                     }
                 }
