@@ -1,5 +1,4 @@
-FROM ubuntu
-RUN apt-get update
-RUN apt-get install apache2 -y
-ADD . /var/www/java
-ENTRYPOINT apachectl -D FOREGROUND
+FROM nginx:latest
+COPY ./path/to/your/app /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
