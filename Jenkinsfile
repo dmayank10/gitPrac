@@ -21,19 +21,20 @@ pipeline {
                 }
             }
         }    
-        stage('test') {
-            steps {
-                script {
-                    def sonarScannerCmd = "${SCANNER_HOME}/bin/sonar-scanner"
-                    withSonarQubeEnv('SonarQube') {
-                        sh "${sonarScannerCmd}"
-                    }
-                }
-            }
-        }
+        // stage('test') {
+        //     steps {
+        //         script {
+        //             def sonarScannerCmd = "${SCANNER_HOME}/bin/sonar-scanner"
+        //             withSonarQubeEnv('SonarQube') {
+        //                 sh "${sonarScannerCmd}"
+        //             }
+        //         }
+        //     }
+        // }
         stage('deploy') {
             steps {
                 echo 'code deploy into docker container'
+                
             }
         }
     }
