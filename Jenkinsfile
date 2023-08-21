@@ -34,7 +34,9 @@ pipeline {
         stage('deploy') {
             steps {
                 echo 'code deploy into docker container'
-                
+                def dockerImage = docker.build("gitPrac:${BUILD_NUMBER}", "./var/lib/jenkins/workspace/gitPrac")
+                withDockerContainer('dockerImage', ports: ['8080:80'], name: 'gitPrac-container') {         
+                }
             }
         }
     }
