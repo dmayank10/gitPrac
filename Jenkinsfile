@@ -36,7 +36,7 @@ pipeline {
                 script {
                 echo 'code deploy into docker container'
                 def dockerImage = docker.build("gitprac:${BUILD_NUMBER}", "./home/ec2-user")
-                withDockerContainer('dockerImage', ports: ['8080:80'], name: 'gitprac-container') {         
+                withDockerContainer(dockerImage, ports: ['8080:80'], name: 'gitprac-container') {         
                 }
                 }
             }
