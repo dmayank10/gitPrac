@@ -34,7 +34,7 @@ pipeline {
         stage('deploy') {
             steps {
                 echo 'code deploy into docker container'
-                sh 'docker rm -f $(docker ps -a -q)'
+                // sh 'docker rm -f $(docker ps -a -q)'
                 sh 'docker build -t gitprac:${BUILD_NUMBER} .' 
                 sh 'docker run -itd --name gitprac-container-${BUILD_NUMBER} -p 833:80 gitprac:${BUILD_NUMBER}'
             }
