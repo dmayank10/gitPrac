@@ -1,8 +1,5 @@
-class Hello
-{
-Public static void main(String args[])
-{
-System.out.println("helloo! I am pushing the code again from child to master..");
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
 }
-}
-
