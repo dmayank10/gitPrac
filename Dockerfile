@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y nginx
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Copy your Java application JAR/WAR file
-COPY /usr/share/java/gitprac.jar /app.jar
+COPY target/gitprac.jar /app.jar
 
 # Expose ports for Nginx and Java application
 EXPOSE 80
