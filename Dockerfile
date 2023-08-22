@@ -8,7 +8,7 @@ WORKDIR /app
 COPY Hello.java .
 
 # Compile the Java code
-RUN javac Hello.java
+RUN javac hello.java
 
 # Install Nginx
 RUN apt-get update && \
