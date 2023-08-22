@@ -1,27 +1,18 @@
-# Use a base image with Java already installed
-FROM openjdk:11-jdk
-
-# Set the working directory inside the container
-WORKDIR /app
-
-# Copy your Java application files into the container
-COPY HelloWorld.java .
-
-# Compile your Java application
-RUN javac HelloWorld.java
+# Use a base image with Java and Nginx installed
+FROM openjdk:11-jre-slim
 
 # Install Nginx
-RUN apt-get update && \
-    apt-get install -y nginx
+RUN apt-get update && apt-get install -y nginx
 
-# Remove the default Nginx configuration
-RUN rm /etc/nginx/sites-enabled/default
+# Copy Nginx configuration
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Copy your Nginx configuration file to the container
-COPY nginx.conf /etc/nginx/sites-enabled/
+# Copy your Java application JAR/WAR file
+COPY /usr/share/java/gitprac.jar /app.jar
 
-# Expose the ports for Nginx (80) and your Java app (8080)
-EXPOSE 80 8080
+# Expose ports for Nginx and Java application
+EXPOSE 80
+EXPOSE 8080
 
-# Start Nginx and your Java application
-CMD service nginx start && java HelloWorld
+# Start Nginx and Java application
+CMD service nginx start && java -jar /app.jar
