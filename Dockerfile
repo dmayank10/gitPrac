@@ -5,10 +5,10 @@ FROM openjdk:11-jdk
 WORKDIR /app
 
 # Copy the Java source code into the container
-COPY hello.java .
+COPY HelloWorld.java .
 
 # Compile the Java code
-RUN javac hello.java
+RUN javac HelloWorld.java
 
 # Install Nginx
 RUN apt-get update && \
@@ -24,4 +24,4 @@ COPY nginx.conf /etc/nginx/sites-enabled/
 EXPOSE 80 8080
 
 # Define the command to run when the container starts
-CMD service nginx start && java hello
+CMD service nginx start && java HelloWorld
