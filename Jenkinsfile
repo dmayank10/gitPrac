@@ -33,12 +33,9 @@ pipeline {
         // }
         stage('deploy') {
             steps {
-                script {
                 echo 'code deploy into docker container'
-                def dockerImage = docker.build("gitprac:${BUILD_NUMBER}")
-                withDockerContainer(dockerImage, ports: ['8080:80'], name: 'gitprac-container') {         
-                }
-                }
+                sh 'sudo docker build -t gitprac:${BUILD_NUMBER} .' 
+                sh 'sudo docker run -itd --name gitprac-container -p 8080:80 gitprac:${BUILD_NUMBER}'
             }
         }
     }
