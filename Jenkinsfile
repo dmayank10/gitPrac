@@ -35,7 +35,7 @@ pipeline {
             steps {
                 echo 'code deploy into docker container'
                 sh 'docker build -t gitprac:${BUILD_NUMBER} .' 
-                sh 'docker run -itd --name gitprac-container -p 8080:80 gitprac:${BUILD_NUMBER}'
+                sh 'docker run -itd --name gitprac-container -p 80:8080 gitprac:${BUILD_NUMBER}'
             }
         }
     }
