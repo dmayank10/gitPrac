@@ -12,11 +12,11 @@
     <name>gitprac</name>
     <description>A simple java application</description>
 
-         <properties>
-    <!-- ... other properties ... -->
-    <spring-boot.main-class>com.example.HelloController</spring-boot.main-class>
-</properties>
-
+    <properties>
+        <!-- ... other properties ... -->
+        <spring-boot.main-class>com.example.HelloController</spring-boot.main-class>
+        <java.version>11</java.version>
+    </properties>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -24,10 +24,6 @@
         <version>2.5.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-
-    <properties>
-        <java.version>11</java.version>
-    </properties>
 
     <dependencies>
         <!-- Spring Boot Web Starter -->
