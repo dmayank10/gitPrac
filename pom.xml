@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>spring-boot-demo</artifactId>
+    <artifactId>gitPrac</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
