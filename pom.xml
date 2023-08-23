@@ -10,7 +10,13 @@
     <packaging>jar</packaging>
 
     <name>spring-boot-demo</name>
-    <description>Spring Boot Demo Application</description>
+    <description>A simple Spring Boot application</description>
+
+    <!-- Set the main class for the spring-boot-maven-plugin -->
+    <properties>
+        <java.version>11</java.version>
+        <spring-boot.main-class>com.example.HelloController</spring-boot.main-class>
+    </properties>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -19,17 +25,12 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <properties>
-        <java.version>11</java.version>
-    </properties>
-
     <dependencies>
         <!-- Spring Boot Web Starter -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
         <!-- Thymeleaf Template Engine -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -43,6 +44,10 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <!-- Specify the main class -->
+                    <mainClass>com.example.HelloController</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>
