@@ -1,18 +1,14 @@
-# Use a base image with Java and Nginx installed
+# Use an official OpenJDK base image
 FROM openjdk:11-jre-slim
 
-# Install Nginx
-RUN apt-get update && apt-get install -y nginx
+# Set the working directory inside the container
+WORKDIR /app
 
-# Copy Nginx configuration
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Copy the compiled JAR file into the container
+COPY target/gitPrac-1.0-SNAPSHOT.jar app.jar
 
-# Copy your Java application JAR/WAR file
-COPY target/gitprac.jar /app.jar
-
-# Expose ports for Nginx and Java application
-EXPOSE 80
+# Expose the port that your Spring Boot app will run on
 EXPOSE 8080
 
-# Start Nginx and Java application
-CMD service nginx start && java -jar /app.jar
+# Command to run the application
+CMD ["java", "-jar", "app.jar"]
