@@ -5,18 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>gitprac</artifactId>
+    <artifactId>spring-boot-demo</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>gitprac</name>
-    <description>A simple java application</description>
-
-    <properties>
-        <!-- ... other properties ... -->
-        <spring-boot.main-class>com.example.HelloController</spring-boot.main-class>
-        <java.version>11</java.version>
-    </properties>
+    <name>spring-boot-demo</name>
+    <description>Spring Boot Demo Application</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -24,6 +18,10 @@
         <version>2.5.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+
+    <properties>
+        <java.version>11</java.version>
+    </properties>
 
     <dependencies>
         <!-- Spring Boot Web Starter -->
