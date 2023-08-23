@@ -8,7 +8,7 @@ WORKDIR /app
 COPY target/gitPrac-1.0.0.jar app.jar
 
 # Expose the port that your Spring Boot app will run on
-EXPOSE 8080
+EXPOSE 80
 
 # Command to run the application
 CMD ["java", "-jar", "app.jar"]
