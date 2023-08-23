@@ -1,5 +1,19 @@
-public class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello, World!");
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class HelloController {
+
+    @GetMapping("/")
+    public String hello(Model model) {
+        model.addAttribute("message", "Hello World!! I am Mayank");
+        return "hello";
+    }
+
+    @GetMapping("/next")
+    public String next() {
+        return "next";
     }
 }
+
