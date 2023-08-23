@@ -5,7 +5,7 @@ FROM openjdk:11-jre-slim
 WORKDIR /app
 
 # Copy the compiled JAR file into the container
-COPY target/gitPrac-1.0.0-SNAPSHOT.jar app.jar
+COPY target/gitPrac-1.0.0.jar app.jar
 
 # Expose the port that your Spring Boot app will run on
 EXPOSE 8080
