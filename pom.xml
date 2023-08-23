@@ -12,6 +12,12 @@
     <name>gitprac</name>
     <description>A simple java application</description>
 
+         <properties>
+    <!-- ... other properties ... -->
+    <spring-boot.main-class>com.example.HelloController</spring-boot.main-class>
+</properties>
+
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
